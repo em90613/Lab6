@@ -40,11 +40,19 @@ public class Lab6 {//Program is unfinished. Ask Antonella or Maurice for help.
 
     }
 
-    private static String pigConsonants(String userInput) {//Translates a word using Consonants pig latin logic
+    private static String pigConsonants(String userInput) {
+        String start;
+        String end;
+        String vowels = "aeiou";//Translates a word using Consonants pig latin logic
+        for (int i = 0; i <userInput.length() ; i++) {
+            if(vowels.contains("" + userInput.charAt(i))) {
+                start = userInput.substring(0,i);
+                end = userInput.substring(i);
+                userInput = end + start + "ay";
+                break;
+            }
 
-        userInput = userInput.concat("test");//testing to verify the program reads vowel or not. This will not be in finished product.
-        //Im thinking a for loop should go in here to return the index of the vowel so I know where my string needs
-        // to be taken apart and put back together.
+        }
         return userInput;//returns userInput to main
     }
 
